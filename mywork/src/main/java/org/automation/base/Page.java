@@ -22,7 +22,7 @@ public class Page {
 	public static WebDriver driver = null;
 	public static Properties CONFIG =null;
 	public static Properties OR =null;
-	public static Xls_Reader xls1= new Xls_Reader("/Users/bhavin.br/business/Page-Object/src/main/java/org/automation/xls/TestCases.xlsx");
+	public static Xls_Reader xls1= new Xls_Reader("src/main/java/org/automation/xls/TestCases.xlsx");
 	public static boolean isLoggedIn=false;
 
 	public Page(){
@@ -30,9 +30,9 @@ public class Page {
 		CONFIG= new Properties();
 		OR = new Properties();
 		try{
-			FileInputStream fs = new FileInputStream("/Users/bhavin.br/business/Page-Object/src/main/java/org/automation/config/config.properties");
+			FileInputStream fs = new FileInputStream("src/main/java/org/automation/config/config.properties");
 			CONFIG.load(fs);
-			fs = new FileInputStream("/Users/bhavin.br/business/Page-Object/src/main/java/org/automation/config/OR.properties");
+			fs = new FileInputStream("src/main/java/org/automation/config/OR.properties");
 			OR.load(fs);
 			}catch(Exception e){
 				return;
@@ -44,7 +44,7 @@ public class Page {
 		else if(CONFIG.getProperty("browser").equals("IE"))
 		    driver=new InternetExplorerDriver();
 		else if(CONFIG.getProperty("browser").equals("Chrome")){
-			System.setProperty("webdriver.chrome.driver", "/Users/bhavin.br/business/Page-Object/ChromeDriver");
+			System.setProperty("webdriver.chrome.driver", "ChromeDriver");
 		    driver=new ChromeDriver();
 		}
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
