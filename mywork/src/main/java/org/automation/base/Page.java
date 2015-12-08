@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.automation.pages.inbox.TopMenu;
 import org.automation.util.Xls_Reader;
 
 import java.io.File;
@@ -23,7 +22,6 @@ public class Page {
 	public static WebDriver driver = null;
 	public static Properties CONFIG =null;
 	public static Properties OR =null;
-	public static TopMenu topMenu=null;
 	public static Xls_Reader xls1= new Xls_Reader("/Users/bhavin.br/business/Page-Object/src/main/java/org/automation/xls/TestCases.xlsx");
 	public static boolean isLoggedIn=false;
 
@@ -51,7 +49,6 @@ public class Page {
 		}
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
-		topMenu = new TopMenu();
 		
 	}
 }
